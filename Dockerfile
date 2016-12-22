@@ -31,6 +31,10 @@ RUN { \
     } > /usr/local/etc/php/conf.d/opcache-recommended.ini
 RUN a2enmod rewrite
 
+RUN touch /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "upload_max_filesize = 2G;" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size = 2G;" >> /usr/local/etc/php/conf.d/uploads.ini
+
 ENV NEXTCLOUD_VERSION 11.0.0
 VOLUME /var/www/html
 
