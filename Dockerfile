@@ -35,7 +35,7 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
     && echo "upload_max_filesize = 2G;" >> /usr/local/etc/php/conf.d/uploads.ini \
     && echo "post_max_size = 2G;" >> /usr/local/etc/php/conf.d/uploads.ini
 
-ENV NEXTCLOUD_VERSION 11.0.0
+ENV NEXTCLOUD_VERSION 11.0.1
 VOLUME /var/www/html
 
 RUN curl -fsSL -o nextcloud.tar.bz2 \
